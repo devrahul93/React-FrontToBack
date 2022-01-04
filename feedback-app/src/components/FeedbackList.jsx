@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import FeedBack from './FeedbackItem'
 
 const FeedBackList = ({ feedBack }) => {
@@ -11,6 +12,10 @@ const FeedBackList = ({ feedBack }) => {
       ))}
     </>
   )
+}
+
+FeedBackList.propTypes = {
+  feedBack: PropTypes.array,
 }
 
 export default FeedBackList
