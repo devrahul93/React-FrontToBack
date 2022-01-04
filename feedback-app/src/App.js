@@ -6,12 +6,18 @@ import FeedBackList from './components/FeedbackList'
 
 const App = () => {
   const [feedBack, setFeedBack] = useState(FeedbackData)
+  const deleteFeedback = (id) => {
+    if (window.confirm('are you sure')) {
+      setFeedBack(feedBack.filter((item) => item.id !== id))
+    }
+  }
+
   return (
     <>
       <>
         <Header />
         <div className="container">
-          <FeedBackList feedBack={feedBack} />
+          <FeedBackList feedBack={feedBack} handleDelete={deleteFeedback} />
         </div>
       </>
     </>
